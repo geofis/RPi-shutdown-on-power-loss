@@ -1,0 +1,19 @@
+[Unit]
+Description=Shutdown on power loss via Power Good (PG) sobre GPIO
+After=multi-user.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 -u /usr/local/bin/shutdown_on_power_loss.py
+Restart=on-failure
+RestartSec=5
+User=root
+KillMode=control-group
+PermissionsStartOnly=true
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+

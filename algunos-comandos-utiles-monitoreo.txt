@@ -1,0 +1,3 @@
+sudo systemctl status shutdown-power-loss.service
+journalctl -fu shutdown-power-loss.service
+
