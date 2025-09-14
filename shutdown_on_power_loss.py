@@ -60,7 +60,7 @@ def manejar_evento(channel):
 # Configurar pin con pull-up
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(PIN_PG, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.add_event_detect(PIN_PG, GPIO.FALLING, callback=manejar_evento, bouncetime=1000)
+GPIO.add_event_detect(PIN_PG, GPIO.RISING, callback=manejar_evento, bouncetime=1000)
 
 # Evaluar estado inicial por si ya está en HIGH al arrancar (sin energía externa)
 estado_inicial = GPIO.input(PIN_PG)
